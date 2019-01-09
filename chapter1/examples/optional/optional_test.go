@@ -21,7 +21,7 @@ func TestParseOptionsSingle(t *testing.T) {
 	levelOption := optionLevel("> 9000")
 	levelConfig, err := parseOptions(levelOption)
 	if err != nil {
-		t.Errorf("Error occured when single option. %s", err)
+		t.Errorf("Error occurred when single option. %s", err)
 	}
 
 	if reflect.DeepEqual(levelConfig, &config{level: "> 9000", environment: "home", command: "none"}) {
@@ -39,7 +39,7 @@ func TestParseOptionsAll(t *testing.T) {
 
 	optionsConfig, err := parseOptions(levelOption, envOption, commandOption)
 	if err != nil {
-		t.Errorf("Error occured when single option. %s", err)
+		t.Errorf("Error occurred when single option. %s", err)
 	}
 
 	if reflect.DeepEqual(optionsConfig, &config{level: "> 9000", environment: "space", command: "go run ./..."}) {
